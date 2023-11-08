@@ -3,6 +3,7 @@ import 'package:projeto_nyx/Screens/home_page.dart';
 import 'package:projeto_nyx/Screens/splash_page.dart';
 import 'package:projeto_nyx/Screens/login_page.dart';
 import 'package:projeto_nyx/Screens/register_page.dart';
+import 'package:projeto_nyx/Screens/Tutorial/Tutorial1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,10 +41,11 @@ class MyApp extends StatelessWidget {
       ],
       initialRoute: '/',
       routes: {
-        '/': (context) => SplashPage(),
-        '/login': (context) => LoginPage(),
-        '/main': (context) => MainPage(),
-        '/register': (context) => RegisterPage(),
+        '/': (context) => const SplashPage(),
+        '/login': (context) => const LoginPage(),
+        '/main': (context) => const MainPage(),
+        '/register': (context) => const RegisterPage(),
+        '/tutorial1': (context) => const Tutorial1(),
       },
     );
   }
