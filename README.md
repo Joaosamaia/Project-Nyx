@@ -1,16 +1,8 @@
-# projeto_nyx
+# Projeto_nyx
 
-A new Flutter project.
+O Nyx é um aplicativo projetado para fornecer recursos práticos para mulheres que enfrentam situações de violência doméstica. Este aplicativo visa oferecer uma opção segura para que mulheres em situação de abuso doméstico ou similar possam, de maneira rápida e com pouca interação, contactar as autoridades responsáveis e obter ajuda e/ou socorro a depender do caso. Assim visando evitar desastres e aumentar o acesso à ajuda dessas mulheres.
 
-## Getting Started
+## Docs úteis ao projeto:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- <a href="https://docs.google.com/document/d/1Ji0rHpo6TrOQi9VUJ-s0mQP_nCWUb4gB9OxtAcc2HXI/edit#heading=h.2ea87tx589y4">Documento de Levantamento de Requisitos</a>
+- <a href="https://www.figma.com/file/HpFzkWQf5vfNp6Lr6c9A31/App---bot%C3%A3o-de-emerg%C3%AAncia?type=design&node-id=95-10&mode=design&t=aXH4iV3Mbut2ARLe-0">Prototipação no Figma</a>
