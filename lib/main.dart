@@ -3,7 +3,9 @@ import 'package:projeto_nyx/Screens/home_page.dart';
 import 'package:projeto_nyx/Screens/splash_page.dart';
 import 'package:projeto_nyx/Screens/login_page.dart';
 import 'package:projeto_nyx/Screens/register_page.dart';
-import 'package:projeto_nyx/Screens/Tutorial/Tutorial1.dart';
+import 'package:projeto_nyx/Screens/Tutorial/tutorial_1.dart';
+import 'package:projeto_nyx/Screens/Tutorial/tutorial_2.dart';
+import 'package:projeto_nyx/Screens/Tutorial/tutorial_3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,9 +45,11 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashPage(),
         '/login': (context) => const LoginPage(),
-        '/main': (context) => const MainPage(),
+        '/main': (context) => MainPage(),
         '/register': (context) => const RegisterPage(),
         '/tutorial1': (context) => const Tutorial1(),
+        '/tutorial2': (context) => const Tutorial2(),
+        '/tutorial3': (context) => const Tutorial3(),
       },
     );
   }
