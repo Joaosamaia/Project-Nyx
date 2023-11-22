@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_nyx/Screens/Tutorial/tutorial_1.dart';
-import 'package:projeto_nyx/Screens/home_page.dart';
+import 'package:projeto_nyx/Screens/login_page.dart';
 // import '../Constants/Colors.dart';
 
-class MainPage extends StatefulWidget {
+class Landing extends StatefulWidget {
   @override
-  _MainPageState createState() => _MainPageState();
+  _LandingState createState() => _LandingState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _LandingState extends State<Landing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +37,7 @@ class _MainPageState extends State<MainPage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MainPage()),
+                  MaterialPageRoute(builder: (context) => LoginPage()),
                 );
               },
               style: ButtonStyle(
