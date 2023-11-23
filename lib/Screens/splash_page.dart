@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../Constants/Colors.dart';
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({super.key});
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
   _SplashPageState createState() => _SplashPageState();
@@ -16,7 +16,9 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     _timer = Timer(const Duration(seconds: 1, milliseconds: 500), () {
-        Navigator.of(context).pushNamed('/main',);
+      Navigator.of(context).pushNamed(
+        '/main',
+      );
     });
   }
 
@@ -29,9 +31,9 @@ class _SplashPageState extends State<SplashPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Expanded(child: 
-              Image.asset(
-                "assets/icons/counter_icon.png", /*substituir por imagem que está no figma)*/
+            Expanded(
+              child: Image.asset(
+                "assets/images/logoG - red.png",
                 width: 200,
                 height: 200,
               ),
