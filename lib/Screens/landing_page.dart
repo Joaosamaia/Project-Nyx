@@ -1,35 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_nyx/Screens/Tutorial/tutorial_1.dart';
-import 'package:projeto_nyx/Screens/login_page.dart';
+import '../Screens/Tutorial/tutorial_1.dart';
+import '../Screens/home_page.dart';
 // import '../Constants/Colors.dart';
 
-class Landing extends StatefulWidget {
+class MainPage extends StatefulWidget {
   @override
-  _LandingState createState() => _LandingState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _LandingState extends State<Landing> {
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Landing"),
-        actions: [],
-      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/pizza.png'),
+            image: AssetImage('assets/images/Landing page.png'),
             fit: BoxFit.cover,
           ),
         ),
         child: Center(
           child: Column(children: [
+            SizedBox(height: 90),
             const Text(
               "Nyx Delivery",
               style: TextStyle(
-                fontSize: 25.0,
-                color: Colors.black,
+                fontSize: 50.0,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Caladea',
+                fontStyle: FontStyle.italic
+                
               ),
             ),
             const SizedBox(height: 450.0),
@@ -37,14 +38,25 @@ class _LandingState extends State<Landing> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  MaterialPageRoute(builder: (context) =>  Home()),
                 );
               },
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all<Color>(const Color(0xFFF08D30)),
+                minimumSize: MaterialStateProperty.all<Size>(Size(300.0, 62.0)),
+                shape: MaterialStateProperty.all<OutlinedBorder>(
+                  RoundedRectangleBorder(
+                    side: BorderSide(color: Colors.black, width: 2.0),
+                    borderRadius: BorderRadius.circular(
+                        20.0), // 
+                  ),
+                ),
               ),
-              child: const Text('Já possuo uma conta'),
+              child: const Text(
+                'Já possuo uma conta',
+                style: TextStyle(fontSize: 18.0, color: Colors.white),
+              ),
             ),
             const SizedBox(height: 40.0),
             ElevatedButton(
@@ -57,8 +69,17 @@ class _LandingState extends State<Landing> {
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all<Color>(const Color(0xFFF08D30)),
+                minimumSize: MaterialStateProperty.all<Size>(Size(300.0, 60.0)),
+                shape: MaterialStateProperty.all<OutlinedBorder>(
+                  RoundedRectangleBorder(
+                    side: BorderSide(color: Colors.black, width: 2.0),
+                    borderRadius: BorderRadius.circular(
+                        20.0), // Ajuste conforme necessário
+                  ),
+                ),
               ),
-              child: const Text('Primeiro acesso'),
+              child: const Text('Primeiro acesso',
+                  style: TextStyle(fontSize: 18.0, color: Colors.white)),
             )
           ]),
         ),
