@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "846273864913",
+    "project_id": "projetonyx-ac1c5",
+    "storage_bucket": "projetonyx-ac1c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846273864913:android:619301ba6c25f5d70c51f0",
+        "android_client_info": {
+          "package_name": "com.example.home"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNL0Itha-VQm1wFOE-g0971GW1zsIpWqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

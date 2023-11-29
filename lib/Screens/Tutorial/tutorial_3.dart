@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_nyx/Constants/Colors.dart';
+import '../../Constants/Colors.dart';
 
 class Tutorial3 extends StatefulWidget {
   const Tutorial3({super.key});
@@ -73,7 +73,7 @@ class _Tutorial3 extends State<Tutorial3> {
                       icon: const Icon(Icons.arrow_forward_rounded),
                       onPressed: () {
                         Navigator.of(context).pushNamed(
-                          '/register',
+                          '/home1',
                         );
                       }),
                 ),
