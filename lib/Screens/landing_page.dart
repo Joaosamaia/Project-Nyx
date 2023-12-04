@@ -4,6 +4,8 @@ import '../Screens/home_page.dart';
 // import '../Constants/Colors.dart';
 
 class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
   @override
   _MainPageState createState() => _MainPageState();
 }
@@ -21,7 +23,7 @@ class _MainPageState extends State<MainPage> {
         ),
         child: Center(
           child: Column(children: [
-            SizedBox(height: 90),
+            const SizedBox(height: 90),
             const Text(
               "Nyx Delivery",
               style: TextStyle(
@@ -38,16 +40,16 @@ class _MainPageState extends State<MainPage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  Home()),
+                  MaterialPageRoute(builder: (context) =>  const Home()),
                 );
               },
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all<Color>(const Color(0xFFF08D30)),
-                minimumSize: MaterialStateProperty.all<Size>(Size(300.0, 62.0)),
+                minimumSize: MaterialStateProperty.all<Size>(const Size(300.0, 62.0)),
                 shape: MaterialStateProperty.all<OutlinedBorder>(
                   RoundedRectangleBorder(
-                    side: BorderSide(color: Colors.black, width: 2.0),
+                    side: const BorderSide(color: Colors.black, width: 2.0),
                     borderRadius: BorderRadius.circular(
                         20.0), // 
                   ),
@@ -69,10 +71,10 @@ class _MainPageState extends State<MainPage> {
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all<Color>(const Color(0xFFF08D30)),
-                minimumSize: MaterialStateProperty.all<Size>(Size(300.0, 60.0)),
+                minimumSize: MaterialStateProperty.all<Size>(const Size(300.0, 60.0)),
                 shape: MaterialStateProperty.all<OutlinedBorder>(
                   RoundedRectangleBorder(
-                    side: BorderSide(color: Colors.black, width: 2.0),
+                    side: const BorderSide(color: Colors.black, width: 2.0),
                     borderRadius: BorderRadius.circular(
                         20.0), // Ajuste conforme necessário
                   ),

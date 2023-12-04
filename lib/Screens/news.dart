@@ -41,6 +41,8 @@ class News_page extends StatelessWidget {
     ),
   ];
 
+  const News_page({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,19 +83,19 @@ class News_page extends StatelessWidget {
         color: Colors.black,
         height: 50,
         child: Container(
-          padding: EdgeInsets.only(bottom: 0.0),
+          padding: const EdgeInsets.only(bottom: 0.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                icon: Icon(Icons.home, color: Colors.grey),
+                icon: const Icon(Icons.home, color: Colors.grey),
                 iconSize: 30.0,
                 onPressed: () { Navigator.of(context).pushNamed(
                     '/home1',
                   );},
               ),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.location_on,
                   color: Colors.grey,
                 ),
@@ -102,9 +104,9 @@ class News_page extends StatelessWidget {
                   Navigator.pushNamed(context, '/map');
                 },
               ),
-              SizedBox(width: 24.0),
+              const SizedBox(width: 24.0),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.library_books,
                   color: Colors.white,
                 ),
@@ -112,7 +114,7 @@ class News_page extends StatelessWidget {
                 onPressed: () {},
               ),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.person,
                   color: Colors.grey,
                 ),
