@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import '../Constants/Colors.dart';
+import '../appbar.dart';
+import '../input.dart';
+import '../scrollable_column.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<LoginPage> createState() => _LoginPage();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _LoginPage extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,10 +19,10 @@ class _MyWidgetState extends State<MyWidget> {
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         child: Form(
-          key: _formKey,
+          
           child: ScrollableColumn(
             children: [
-              CustomInputField(
+              /*CustomInputField(
                 keyboardType: TextInputType.emailAddress,
                 hintText: "Email",
                 controller: _emailController,
@@ -51,12 +55,12 @@ class _MyWidgetState extends State<MyWidget> {
               const SizedBox(height: 24),
               CustomCheckbox(
                 labelText: "lembrar conta",
-                value: _rememberMeChecked,
-                onChanged: (checked) =>
+                value: //_rememberMeChecked,
+                ,onChanged: (checked) =>
                     setState(() => _rememberMeChecked = checked ?? false),
               ),
               const SizedBox(height: 24),
-              /*ElevatedButton(
+              ElevatedButton(
                 child: Text("Login"),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
@@ -85,8 +89,8 @@ class _MyWidgetState extends State<MyWidget> {
                     });
                   }
                 },
-              ), */
-              const SizedBox(height: 38.0),
+              ), 
+              const SizedBox(height: 38.0),*/
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Expanded(
                   child: Align(

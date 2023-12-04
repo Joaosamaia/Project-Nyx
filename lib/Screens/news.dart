@@ -41,7 +41,7 @@ class News_page extends StatelessWidget {
     ),
   ];
 
-  const News_page({super.key});
+  News_page({super.key});
 
   @override
   Widget build(BuildContext context) {

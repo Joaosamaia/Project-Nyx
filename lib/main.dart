@@ -43,9 +43,9 @@ class MyApp extends StatelessWidget {
         '/tutorial1': (context) => const Tutorial1(),
         '/tutorial2': (context) => const Tutorial2(),
         '/tutorial3': (context) => const Tutorial3(),
-        '/home': (context) => const Home(),
+        '/home': (context) => Home(),
         '/map': (context) => const MapSample(),
-        '/new': (context) => const News_page(),
+        '/new': (context) => News_page(),
       },
     );
   }
