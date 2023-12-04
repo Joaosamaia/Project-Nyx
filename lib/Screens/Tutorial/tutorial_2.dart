@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_nyx/Constants/Colors.dart';
+import '../../Constants/Colors.dart';
 
 class Tutorial2 extends StatefulWidget {
   const Tutorial2({super.key});
