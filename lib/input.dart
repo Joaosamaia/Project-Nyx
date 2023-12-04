@@ -8,7 +8,7 @@ class CustomInputField extends StatefulWidget {
   final bool obscureText;
   final FormFieldValidator<String>? validator;
 
-  const CustomInputField({
+  const CustomInputField({super.key, 
     this.controller,
     this.initialValue,
     this.keyboardType,
@@ -36,7 +36,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFFf1f0f5),
+        color: const Color(0xFFf1f0f5),
         borderRadius: BorderRadius.circular(16),
       ),
       child: TextFormField(
@@ -46,17 +46,17 @@ class _CustomInputFieldState extends State<CustomInputField> {
         obscureText: _obscure,
         obscuringCharacter: '*',
         validator: widget.validator,
-        decoration: new InputDecoration(
+        decoration: InputDecoration(
           border: InputBorder.none,
           focusedBorder: InputBorder.none,
           enabledBorder: InputBorder.none,
           errorBorder: InputBorder.none,
           disabledBorder: InputBorder.none,
-          contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           hintText: widget.hintText,
           suffixIcon: widget.obscureText
               ? Padding(
-                  padding: EdgeInsets.all(4),
+                  padding: const EdgeInsets.all(4),
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
@@ -84,7 +84,7 @@ class CustomCheckbox extends StatelessWidget {
   final void Function(bool? value) onChanged;
   final String? labelText;
   final Widget? label;
-  const CustomCheckbox({
+  const CustomCheckbox({super.key, 
     this.value = false,
     required this.onChanged,
     this.labelText,

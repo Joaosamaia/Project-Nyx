@@ -6,7 +6,7 @@ import '../input.dart';
 import '../scrollable_column.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage() : super();
+  const LoginPage({super.key});
   @override
   _LoginPage createState() => _LoginPage();
 }
@@ -21,9 +21,9 @@ class _LoginPage extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MainColor.primaryColor,
-      appBar: CustomAppBar(title: "Bem-vindo ao contador Nyx!"),
+      appBar: const CustomAppBar(title: "Bem-vindo ao contador Nyx!"),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         child: Form(
           key: _formKey,
           child: ScrollableColumn(
@@ -42,7 +42,7 @@ class _LoginPage extends State<LoginPage> {
                   return emailValid ? null : "Email invalido";
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               CustomInputField(
                 keyboardType: TextInputType.visiblePassword,
                 hintText: "senha",
@@ -58,14 +58,14 @@ class _LoginPage extends State<LoginPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               CustomCheckbox(
                 labelText: "lembrar conta",
                 value: _rememberMeChecked,
                 onChanged: (checked) =>
                     setState(() => _rememberMeChecked = checked ?? false),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               /*ElevatedButton(
                 child: Text("Login"),
                 onPressed: () {
@@ -144,20 +144,20 @@ class _LoginPage extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Text(
+                  const Text(
                     "Não possui uma conta?",
                     style: TextStyle(
                       color: Color(0xff000000),
                     ),
                   ),
                   TextButton(
-                    child: Text("Registrar-se"),
+                    child: const Text("Registrar-se"),
                     onPressed: () =>
                         {Navigator.of(context).pushNamed("/register")},
                   ),
                 ],
               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
             ],
           ),
         ),
