@@ -39,13 +39,13 @@ class MyApp extends StatelessWidget {
         '/': (context) => const SplashPage(),
         // '/login': (context) => const LoginPage(),
         // '/register': (context) => const RegisterPage(),
-        '/main': (context) => MainPage(),
+        '/main': (context) => const MainPage(),
         '/tutorial1': (context) => const Tutorial1(),
         '/tutorial2': (context) => const Tutorial2(),
         '/tutorial3': (context) => const Tutorial3(),
-        '/home': (context) => Home(),
+        '/home': (context) => const Home(),
         '/map': (context) => const MapSample(),
-        '/new': (context) => News_page(),
+        '/new': (context) => const News_page(),
       },
     );
   }
@@ -58,10 +58,10 @@ class MapSample extends StatefulWidget {
 }
 
 class MapSampleState extends State<MapSample> {
-  Completer<GoogleMapController> _controller = Completer();
+  final Completer<GoogleMapController> _controller = Completer();
   final Locator locator = Locator();
 
-  static final CameraPosition _UzhNU = const CameraPosition(
+  static const CameraPosition _UzhNU = CameraPosition(
     target: LatLng(48.6075588, 22.2641117),
     zoom: 15,
   );

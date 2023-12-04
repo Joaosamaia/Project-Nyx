@@ -12,7 +12,7 @@ class NewsTile extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.all(10), // Ajuste o valor conforme necessário
+      margin: const EdgeInsets.all(10), // Ajuste o valor conforme necessário
       width: screenWidth,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -23,13 +23,13 @@ class NewsTile extends StatelessWidget {
             spreadRadius: 2, // Raio de propagação da sombra
             blurRadius: 5, // Raio de desfoque da sombra
             offset:
-                Offset(0, 3), // Deslocamento da sombra (horizontal, vertical)
+                const Offset(0, 3), // Deslocamento da sombra (horizontal, vertical)
           ),
         ],
       ),
       child: Row(
         children: [
-          SizedBox(
+          const SizedBox(
               width: 20), // Adicione um espaçamento entre a imagem e o texto
 
           Image.asset(
@@ -37,31 +37,31 @@ class NewsTile extends StatelessWidget {
             height: 100,
             width: 70,
           ),
-          SizedBox(
+          const SizedBox(
               width: 20), // Adicione um espaçamento entre a imagem e o texto
 
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Text(
                 news.title,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
                 children: [
                   Text(
                     news.descrition,
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
             ],

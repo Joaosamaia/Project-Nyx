@@ -11,7 +11,7 @@ class FoodTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10), // Ajuste o valor conforme necessário
+      margin: const EdgeInsets.all(10), // Ajuste o valor conforme necessário
 
       decoration: BoxDecoration(
         color: Colors.white,
@@ -22,13 +22,13 @@ class FoodTile extends StatelessWidget {
             spreadRadius: 2, // Raio de propagação da sombra
             blurRadius: 5, // Raio de desfoque da sombra
             offset:
-                Offset(0, 3), // Deslocamento da sombra (horizontal, vertical)
+                const Offset(0, 3), // Deslocamento da sombra (horizontal, vertical)
           ),
         ],
       ),
       child: Row(
         children: [
-          SizedBox(
+          const SizedBox(
               width: 20), // Adicione um espaçamento entre a imagem e o texto
 
           Image.asset(
@@ -36,36 +36,36 @@ class FoodTile extends StatelessWidget {
             height: 100,
             width: 70,
           ),
-          SizedBox(
+          const SizedBox(
               width: 20), // Adicione um espaçamento entre a imagem e o texto
 
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Text(
                 food.name,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.location_on_rounded,
                     size: 15,
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   Text(
                     food.locator,
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
@@ -75,7 +75,7 @@ class FoodTile extends StatelessWidget {
                     color: Colors.yellow[800],
                     size: 20,
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   Text(food.rating),
                 ],
               ),

@@ -31,6 +31,8 @@ class Home extends StatelessWidget {
         rating: "5.0"),
   ];
 
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,9 +41,9 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 50, left: 0, bottom: 0, right: 0),
+              margin: const EdgeInsets.only(top: 50, left: 0, bottom: 0, right: 0),
               alignment: Alignment.center,
-              padding: EdgeInsets.all(9.0),
+              padding: const EdgeInsets.all(9.0),
               width: 350.0,
               height: 55,
               decoration: BoxDecoration(
@@ -49,15 +51,15 @@ class Home extends StatelessWidget {
                   color: Colors.black,
                   width: 1.0,
                 ),
-                color: Color(0xFFE5C2F5),
-                borderRadius: BorderRadius.only(
+                color: const Color(0xFFE5C2F5),
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15),
                   topRight: Radius.circular(15),
                   bottomLeft: Radius.circular(15),
                   bottomRight: Radius.circular(15),
                 ),
               ),
-              child: Text(
+              child: const Text(
                 'Olá, Usuário',
                 style: TextStyle(
                   fontSize: 20.0,
@@ -69,14 +71,14 @@ class Home extends StatelessWidget {
 
 //Ligar essa saudação ao fire base para apresentar o nome da usuaria e sua localização se der tempo, se não alterar para outra forma de saudação
 
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
 
             Image.asset(
               "assets/images/Hamburguer.png",
               width: 600.0,
               height: 200.0,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
 
@@ -113,17 +115,17 @@ class Home extends StatelessWidget {
         color: Colors.black,
         height: 50,
         child: Container(
-          padding: EdgeInsets.only(bottom: 0.0),
+          padding: const EdgeInsets.only(bottom: 0.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                icon: Icon(Icons.home, color: Colors.white),
+                icon: const Icon(Icons.home, color: Colors.white),
                 iconSize: 30.0,
                 onPressed: () {},
               ),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.location_on,
                   color: Colors.grey,
                 ),
@@ -132,9 +134,9 @@ class Home extends StatelessWidget {
                   Navigator.pushNamed(context, '/map');
                 },
               ),
-              SizedBox(width: 24.0),
+              const SizedBox(width: 24.0),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.library_books,
                   color: Colors.grey,
                 ),
@@ -144,7 +146,7 @@ class Home extends StatelessWidget {
                 },
               ),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.person,
                   color: Colors.grey,
                 ),
