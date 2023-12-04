@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
-  CustomAppBar({required this.title}) {}
+  const CustomAppBar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         top: 16,
       ),
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         vertical: 8,
         horizontal: 16,
       ),
@@ -19,18 +19,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             width: 200,
             child: Text(
               title,
               maxLines: 2,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.w600,
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Row(
@@ -40,7 +40,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 height: 4,
                 color: const Color(0xFF4672ff),
               ),
-              SizedBox(width: 4),
+              const SizedBox(width: 4),
               Container(
                 width: 10,
                 height: 4,
@@ -54,5 +54,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(136);
+  Size get preferredSize => const Size.fromHeight(136);
 }
