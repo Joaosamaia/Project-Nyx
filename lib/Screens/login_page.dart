@@ -1,22 +1,12 @@
-
 import 'package:flutter/material.dart';
-import '../Constants/Colors.dart';
-import '../appbar.dart';
-import '../input.dart';
-import '../scrollable_column.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
   @override
-  _LoginPage createState() => _LoginPage();
+  State<MyWidget> createState() => _MyWidgetState();
 }
 
-class _LoginPage extends State<LoginPage> {
-  final _formKey = GlobalKey<FormState>();
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
-  bool _rememberMeChecked = false;
-
+class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
