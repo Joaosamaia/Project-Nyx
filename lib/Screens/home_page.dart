@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 // import '../Constants/Colors.dart';
 
 class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
   @override
   _MainPageState createState() => _MainPageState();
 }
@@ -11,12 +13,12 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
-        actions: [
+        title: const Text("Home"),
+        actions: const [
         ],
       ),
       body: Container(
-        child: Text("add other widgets"),
+        child: const Text("add other widgets"),
       ),
     );
   }
