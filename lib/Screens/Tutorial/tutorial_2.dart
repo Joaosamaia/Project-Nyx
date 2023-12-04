@@ -12,70 +12,72 @@ class _Tutorial2 extends State<Tutorial2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MainColor.primaryColor,
+        backgroundColor: MainColor.primaryColor,
         body: Padding(
           padding: const EdgeInsets.all(4.5),
           child: Center(
               child: Column(children: [
-                const Text(
-                  'Botão de Emergencia:',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.black,
-                  ),
-                ),
-                const Text(
-                  'O botão de emergência estará sempre disponível em\nqualquer tela após o cadastro no aplicativo. Ao\npressionar e segurar o botão, seu endereço será\nenviado automaticamente para a delegacia da\nmulher via WhatsApp. Isso garantirá que, em\nsituações de emergência, a ajuda chegue o mais\nrápido possível e de maneira discreta.\nAlém disso, ao dar um clique rápido no botão, será\npossível solicitar socorro a terceiros, fornecendo\ninformações sobre o nível de emergência, se a vítima\nestá sozinha ou acompanhada, e quem é a vítima.\n',
-                  style: TextStyle(
-                    fontSize: 17.0,
-                    color: Colors.black,
-                  ),
-                ),
-              Expanded(
-                child: Image.asset(
-                  'assets/images/logoG - red.png',
-                )
+            const SizedBox(height: 30.0),
+            const Text(
+              'Botão de Emergencia:',
+              style: TextStyle(
+                fontSize: 20.0,
+                color: Colors.black,
               ),
-              Expanded(
-                child: Image.asset(
-                  'assets/images/mulheres.png',
-                )
+            ),
+            const Text(
+              'O botão de emergência estará sempre disponível em\nqualquer tela após o cadastro no aplicativo. Ao\npressionar e segurar o botão, seu endereço será\nenviado automaticamente para a delegacia da\nmulher via WhatsApp. Isso garantirá que, em\nsituações de emergência, a ajuda chegue o mais\nrápido possível e de maneira discreta.\nAlém disso, ao dar um clique rápido no botão, será\npossível solicitar socorro a terceiros, fornecendo\ninformações sobre o nível de emergência, se a vítima\nestá sozinha ou acompanhada, e quem é a vítima.\n',
+              style: TextStyle(
+                fontSize: 17.0,
+                color: Colors.black,
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child: IconButton(
+            ),
+            Expanded(
+                child: Image.asset(
+              'assets/images/logoG - red.png',
+            )),
+            Expanded(
+                child: Image.asset(
+              'assets/images/mulheres.png',
+            )),
+            Row(
+              children: [
+                Expanded(
+                  child: IconButton(
                       icon: const Icon(Icons.arrow_back_rounded),
-                      onPressed: () {Navigator.of(context).pushNamed('/tutrial1',);}
-                    ),
-                  ),
-                  const Icon(
-                    Icons.panorama_fish_eye,
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    size: 10.0,
-                  ),
-                  const Icon(
-                    Icons.brightness_1,
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    size: 10.0,
-                  ),
-                  const Icon(
-                    Icons.panorama_fish_eye,
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    size: 10.0,
-                  ),
-                  Expanded(
-                    child: IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(
+                          '/tutorial1',
+                        );
+                      }),
+                ),
+                const Icon(
+                  Icons.panorama_fish_eye,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                  size: 10.0,
+                ),
+                const Icon(
+                  Icons.brightness_1,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                  size: 10.0,
+                ),
+                const Icon(
+                  Icons.panorama_fish_eye,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                  size: 10.0,
+                ),
+                Expanded(
+                  child: IconButton(
                       icon: const Icon(Icons.arrow_forward_rounded),
-                      onPressed: () {Navigator.of(context).pushNamed('/tutrial3',);}
-                    ),
-                  ),
-                ],
-              ),
-            ]
-          )
-        ),
-      )
-    );
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(
+                          '/tutorial3',
+                        );
+                      }),
+                ),
+              ],
+            ),
+          ])),
+        ));
   }
 }
