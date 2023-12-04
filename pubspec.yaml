@@ -47,13 +47,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  google_maps_flutter: ^2.1.4
-  google_maps_flutter_web: ^0.3.2
-  geolocator: ^8.2.0
-  url_launcher: ^6.2.1
-  firebase_core: ^2.15.1
-  firebase_analytics: ^10.4.5
-  firebase_auth: ^4.8.0
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
