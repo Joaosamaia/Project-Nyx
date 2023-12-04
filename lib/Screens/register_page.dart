@@ -5,7 +5,7 @@ import '../input.dart';
 import '../scrollable_column.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage() : super();
+  const RegisterPage({super.key});
   @override
   _RegisterPage createState() => _RegisterPage();
 }
@@ -21,9 +21,9 @@ class _RegisterPage extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MainColor.primaryColor,
-      appBar: CustomAppBar(title: "Realize seu cadastro"),
+      appBar: const CustomAppBar(title: "Realize seu cadastro"),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         child: Form(
           key: _formKey,
           child: ScrollableColumn(
@@ -42,7 +42,7 @@ class _RegisterPage extends State<RegisterPage> {
                   return emailValid ? null : "Email inválido";
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               CustomInputField(
                 keyboardType: TextInputType.visiblePassword,
                 hintText: "Senha",
@@ -58,7 +58,7 @@ class _RegisterPage extends State<RegisterPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               CustomInputField(
                 keyboardType: TextInputType.visiblePassword,
                 hintText: "Confirme a senha",
@@ -74,12 +74,12 @@ class _RegisterPage extends State<RegisterPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               CustomCheckbox(
                 label: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(left: 8),
                       child: Text(
                         "Ao criar uma conta voce concorda com nossos",
@@ -89,7 +89,7 @@ class _RegisterPage extends State<RegisterPage> {
                       ),
                     ),
                     TextButton(
-                      child: Text('Termos e condições'),
+                      child: const Text('Termos e condições'),
                       onPressed: () {
                         print("// Termos e condições");
                       },
@@ -100,7 +100,7 @@ class _RegisterPage extends State<RegisterPage> {
                 onChanged: (checked) => setState(
                     () => _agreeWithTermsAndConditions = checked ?? false),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               /*ElevatedButton(
                 child: Text("Registrar"),
                   onPressed: !_agreeWithTermsAndConditions
@@ -181,20 +181,20 @@ class _RegisterPage extends State<RegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Text(
+                  const Text(
                     "Já possui uma conta?",
                     style: TextStyle(
                       color: Color(0xff000000),
                     ),
                   ),
                   TextButton(
-                    child: Text("Login"),
+                    child: const Text("Login"),
                     onPressed: () =>
                         {Navigator.of(context).pushNamed("/login")},
                   ),
                 ],
               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
             ],
           ),
         ),
