@@ -1,15 +1,15 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../Constants/Colors.dart';
+//import '../Constants/Colors.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
 
   @override
-  _SplashPageState createState() => _SplashPageState();
+  State<SplashPage> createState() => _SplashPage();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashPage extends State<SplashPage> {
   Timer? _timer;
 
   @override
@@ -17,7 +17,7 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
     _timer = Timer(const Duration(seconds: 1, milliseconds: 500), () {
       Navigator.of(context).pushNamed(
-        '/main',
+        '/auth',
       );
     });
   }
@@ -25,7 +25,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MainColor.primaryColor,
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
