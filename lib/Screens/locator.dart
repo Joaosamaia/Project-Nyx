@@ -56,8 +56,8 @@ class Locator {
   }
 
   void _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrl(url as Uri)) {
+      await launchUrl(url as Uri);
     } else {
       throw 'Could not launch $url';
     }
@@ -65,21 +65,21 @@ class Locator {
 
   void markerCreate() {
     final marker = Marker(
-      markerId: MarkerId('currentLocation'),
+      markerId: const MarkerId('currentLocation'),
       position: LatLng(position!.latitude, position!.longitude),
       icon: BitmapDescriptor.defaultMarker,
       infoWindow: InfoWindow(title: 'My location', snippet: '$position'),
     );
-    markers[MarkerId('place name')] = marker;
+    markers[const MarkerId('place name')] = marker;
 
     double markerLatitude = -8.049776712513152;
     double markerLongitude = -34.88282349944875;
 
     final restaurantMarker = Marker(
-      markerId: MarkerId('restaurantLocation'),
+      markerId: const MarkerId('restaurantLocation'),
       position: LatLng(markerLatitude, markerLongitude),
       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueViolet),
-      infoWindow: InfoWindow(
+      infoWindow: const InfoWindow(
         title: 'Restaurante',
         snippet: 'Clique para obter mais informações',
       ),
@@ -89,15 +89,15 @@ class Locator {
       },
     );
 
-    markers[MarkerId('restaurant')] = restaurantMarker;
+    markers[const MarkerId('restaurant')] = restaurantMarker;
   }
 
   void onMarkerTapped(MarkerId markerId) async {
     if (markerId.value == 'restaurantLocation') {
       String url =
           'https://www.google.com/maps/place/Delegacia+da+Mulher/@-8.0500587,-34.8920407,16.06z/data=!4m10!1m2!2m1!1sdelegacia+da+mulher+em+recife!3m6!1s0x7ab18931ec711af:0x2f81f4225deb324b!8m2!3d-8.0499813!4d-34.8828561!15sCh1kZWxlZ2FjaWEgZGEgbXVsaGVyIGVtIHJlY2lmZZIBEXBvbGljZV9kZXBhcnRtZW504AEA!16s%2Fg%2F1yg4fhylc?entry=ttu';
-      if (await canLaunch(url)) {
-        await launch(url);
+      if (await canLaunchUrl(url as Uri)) {
+        await launchUrl(url as Uri);
       } else {
         throw 'Não foi possível abrir o link.';
       }
