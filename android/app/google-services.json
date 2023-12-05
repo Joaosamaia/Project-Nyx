@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "846273864913",
-    "project_id": "projetonyx-ac1c5",
-    "storage_bucket": "projetonyx-ac1c5.appspot.com"
+    "project_number": "513345062941",
+    "project_id": "nyxdelivery",
+    "storage_bucket": "nyxdelivery.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:846273864913:android:619301ba6c25f5d70c51f0",
+        "mobilesdk_app_id": "1:513345062941:android:0514688bdf7f076e1b1ef4",
         "android_client_info": {
-          "package_name": "com.example.home"
+          "package_name": "com.example.NyxDelivery"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDNL0Itha-VQm1wFOE-g0971GW1zsIpWqw"
+          "current_key": "AIzaSyBqcSVouqxoehPzeqMzS5tIXk9rP5QZUxU"
         }
       ],
       "services": {

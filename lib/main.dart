@@ -1,9 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../Screens/home_page.dart';
+
 import '../Screens/locator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+import '../Screens/home_page.dart';
 import '../Screens/landing_page.dart';
 import '../Screens/news.dart';
 import '../Screens/splash_page.dart';
@@ -13,7 +17,12 @@ import '../Screens/Tutorial/tutorial_1.dart';
 import '../Screens/Tutorial/tutorial_2.dart';
 import '../Screens/Tutorial/tutorial_3.dart';
 
-void main() {
+void main() async{
+
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
 
