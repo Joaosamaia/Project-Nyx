@@ -6,6 +6,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import '../Screens/Auth.dart';
 
 import '../Screens/home_page.dart';
 import '../Screens/landing_page.dart';
@@ -17,7 +19,8 @@ import '../Screens/Tutorial/tutorial_1.dart';
 import '../Screens/Tutorial/tutorial_2.dart';
 import '../Screens/Tutorial/tutorial_3.dart';
 
-void main() async{
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
@@ -33,7 +36,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Nyx Delivery',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -54,7 +57,18 @@ class MyApp extends StatelessWidget {
         '/tutorial3': (context) => const Tutorial3(),
         '/home': (context) => Home(),
         '/map': (context) => const MapSample(),
-        '/new': (context) => News_page(),
+        '/new': (context) => NewsPage(),
+        '/auth': (context) => StreamBuilder<User?>(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot){
+            if(snapshot.hasData) {
+              return Home();
+            } else {
+              return const AuthScreen();
+            }
+          },
+
+        ),
       },
     );
   }
@@ -162,7 +176,7 @@ class MapSampleState extends State<MapSample> {
                 iconSize: 30.0,
                 onPressed: () {
                   Navigator.of(context).pushNamed(
-                    '/home1',
+                    '/home',
                   );
                 },
               ),

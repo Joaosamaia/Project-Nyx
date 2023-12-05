@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../Models/models_news.dart';
 import '../components/news_tile.dart';
 
-class News_page extends StatelessWidget {
+class NewsPage extends StatelessWidget {
   final List<News> newsMenu = [
     News(
       title:
@@ -41,7 +41,7 @@ class News_page extends StatelessWidget {
     ),
   ];
 
-  News_page({super.key});
+  NewsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

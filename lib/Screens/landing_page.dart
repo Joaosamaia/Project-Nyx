@@ -7,10 +7,10 @@ class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
   @override
-  _MainPageState createState() => _MainPageState();
+  State<MainPage> createState() => _MainPage();
 }
 
-class _MainPageState extends State<MainPage> {
+class _MainPage extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +56,7 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
               child: const Text(
-                'Já possuo uma conta',
+                'Fazer login',
                 style: TextStyle(fontSize: 18.0, color: Colors.white),
               ),
             ),
