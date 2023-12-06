@@ -51,16 +51,16 @@ class _Register2 extends State<Register2> {
     required String numero,
     required String compl,
   }) async {
-    final docUser = FirebaseFirestore.instance.collection('users').doc();
+    final docUser = FirebaseFirestore.instance.collection('enderecos').doc();
 
     final endereco = Endereco(
-          cep: cep, 
-          rua: rua, 
-          bairro: bairro, 
-          cidade: cidade, 
-          numero: numero, 
-          compl: compl,
-      ).toJson();
+      cep: cep,
+      rua: rua,
+      bairro: bairro,
+      cidade: cidade,
+      numero: numero,
+      compl: compl,
+    ).toJson();
 
     final json = endereco;
 
@@ -88,194 +88,200 @@ class _Register2 extends State<Register2> {
                   const SizedBox(height: 50),
                   Container(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                     child: Image.asset(
                       'assets/images/logoG - red.png',
                       height: 150,
                       width: 150,
                     ),
                   ),
-                  Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      constraints: const BoxConstraints(
-                        maxWidth: 375,
-                        maxHeight: 650,
-                      ),
-                      child: ListView(
-                        shrinkWrap: true,
-                        children: [
-                          const Text(
-                            "Endereço: ",
-                            style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.w800),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          TextFormField(
-                            controller: _cepController,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Insira seu cep';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                              hintText: 'CEP',
-                              focusColor: Colors.black,
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                  width: 2,
-                                ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    constraints: const BoxConstraints(
+                      maxWidth: 375,
+                      maxHeight: 650,
+                    ),
+                    child: ListView(
+                      shrinkWrap: true,
+                      children: [
+                        const Text(
+                          "Endereço: ",
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.w800),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextFormField(
+                          controller: _cepController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Insira seu cep';
+                            }
+                            return null;
+                          },
+                          decoration: const InputDecoration(
+                            hintText: 'CEP',
+                            focusColor: Colors.black,
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                                width: 2,
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          TextFormField(
-                            controller: _ruaController,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Insira sua rua';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                              hintText: 'Rua',
-                              focusColor: Colors.black,
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                  width: 2,
-                                ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextFormField(
+                          controller: _ruaController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Insira sua rua';
+                            }
+                            return null;
+                          },
+                          decoration: const InputDecoration(
+                            hintText: 'Rua',
+                            focusColor: Colors.black,
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                                width: 2,
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          TextFormField(
-                            controller: _bairroController,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Insira seu bairro';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                              hintText: 'bairro',
-                              focusColor: Colors.black,
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                  width: 2,
-                                ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextFormField(
+                          controller: _bairroController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Insira seu bairro';
+                            }
+                            return null;
+                          },
+                          decoration: const InputDecoration(
+                            hintText: 'bairro',
+                            focusColor: Colors.black,
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                                width: 2,
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          TextFormField(
-                            controller: _cidadeController,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Insira sua cidade';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                              hintText: 'cidade',
-                              focusColor: Colors.black,
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                  width: 2,
-                                ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextFormField(
+                          controller: _cidadeController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Insira sua cidade';
+                            }
+                            return null;
+                          },
+                          decoration: const InputDecoration(
+                            hintText: 'cidade',
+                            focusColor: Colors.black,
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                                width: 2,
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          TextFormField(
-                            controller: _numeroController,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Insira o numero de sua casa';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                              hintText: 'numero',
-                              focusColor: Colors.black,
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                  width: 2,
-                                ),
-                              ),
-                            ),
-                          ),const SizedBox(
-                            height: 20,
-                          ),
-                          TextFormField(
-                            controller: _complController,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Insira seu complemento';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                              hintText: 'Complemento',
-                              focusColor: Colors.black,
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                  width: 2,
-                                ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextFormField(
+                          controller: _numeroController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Insira o numero de sua casa';
+                            }
+                            return null;
+                          },
+                          decoration: const InputDecoration(
+                            hintText: 'numero',
+                            focusColor: Colors.black,
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                                width: 2,
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black,
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextFormField(
+                          controller: _complController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Insira seu complemento';
+                            }
+                            return null;
+                          },
+                          decoration: const InputDecoration(
+                            hintText: 'Complemento',
+                            focusColor: Colors.black,
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                                width: 2,
+                              ),
                             ),
-                            onPressed: () {
-                              final cep = _cepController.text;
-                              final rua = _ruaController.text;
-                              final bairro = _bairroController.text;
-                              final cidade = _cidadeController.text;
-                              final numero = _numeroController.text;
-                              final compl = _complController.text;
-                              createEndereco(
-                                cep: cep,
-                                rua: rua,
-                                bairro: bairro,
-                                cidade: cidade,
-                                numero: numero,
-                                compl: compl,
-                              );
-                              Navigator.of(context).pushNamed(
-                                '/reg3',
-                              );
-                            },
-                            child: const Text('Continuar'),
                           ),
-                        ],
-                      ),
+                        ),
+                        const SizedBox(
+                          height: 46,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xffff9100),
+                          ),
+                          onPressed: () {
+                            final cep = _cepController.text;
+                            final rua = _ruaController.text;
+                            final bairro = _bairroController.text;
+                            final cidade = _cidadeController.text;
+                            final numero = _numeroController.text;
+                            final compl = _complController.text;
+
+                            createEndereco(
+                              cep: cep,
+                              rua: rua,
+                              bairro: bairro,
+                              cidade: cidade,
+                              numero: numero,
+                              compl: compl,
+                            );
+                            Navigator.of(context).pushNamed(
+                              '/reg3',
+                            );
+                          },
+                          child: const Text(
+                            'Continuar',
+                            style: TextStyle(fontSize: 18, color: Colors.white),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ]

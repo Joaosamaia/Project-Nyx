@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Screens/Tutorial/tutorial_1.dart';
-import '../Screens/home_page.dart';
+//import '../Screens/home_page.dart';
 // import '../Constants/Colors.dart';
 
 class MainPage extends StatefulWidget {
