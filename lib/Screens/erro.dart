@@ -6,41 +6,45 @@ class Erro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 200, 202, 203),
+      backgroundColor: const Color.fromARGB(255, 200, 202, 203),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
+            const Icon(
               Icons.error,
               color: Colors.red,
               size: 50,
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               "Ops! Algo deu errado.",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               "Desculpe, encontramos um erro inesperado.",
               style: TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {
-              },
-              child: Text("Voltar"),
+              onPressed: () {},
+              child: const Text("Voltar"),
             ),
           ],
         ),
       ),
-      
-      extendBodyBehindAppBar: true, 
+      extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: ClipOval(
+      floatingActionButton: GestureDetector(
+        onDoubleTap: () {
+          Navigator.pushNamed(context, '/new');
+        },
+        onLongPress: () {
+          sendWhatsapp();
+        },
+        child: FloatingActionButton(
+          onPressed: () {},
           child: Image.asset(
             "assets/images/logoR.png",
             width: 1500.0,
@@ -54,7 +58,6 @@ class Erro extends StatelessWidget {
         notchMargin: 10.0,
         clipBehavior: Clip.antiAlias,
         color: Colors.black,
-        elevation: 0,
         height: 50,
         child: Container(
           padding: const EdgeInsets.only(bottom: 0.0),
@@ -62,21 +65,19 @@ class Erro extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                icon: const Icon(Icons.home, color: Colors.grey),
+                icon: const Icon(Icons.home, color: Colors.white),
                 iconSize: 30.0,
-                onPressed: () {
-                  Navigator.of(context).pushNamed(
-                    '/home1',
-                  );
-                },
+                onPressed: () {},
               ),
               IconButton(
                 icon: const Icon(
                   Icons.location_on,
                   color: Colors.grey,
                 ),
-                iconSize: 35.0,
-                onPressed: () {},
+                iconSize: 30.0,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/map');
+                },
               ),
               const SizedBox(width: 24.0),
               IconButton(
@@ -92,7 +93,7 @@ class Erro extends StatelessWidget {
               IconButton(
                 icon: const Icon(
                   Icons.person,
-                  color: Colors.white,
+                  color: Colors.grey,
                 ),
                 iconSize: 30.0,
                 onPressed: () {},
@@ -101,9 +102,6 @@ class Erro extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
     );
   }
 }
