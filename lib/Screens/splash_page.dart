@@ -17,7 +17,7 @@ class _SplashPage extends State<SplashPage> {
     super.initState();
     _timer = Timer(const Duration(seconds: 1, milliseconds: 500), () {
       Navigator.of(context).pushNamed(
-        '/auth',
+        '/main',
       );
     });
   }

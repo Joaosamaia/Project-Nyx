@@ -7,7 +7,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../Screens/Auth.dart';
+import '../Screens/auth.dart';
 
 import '../Screens/home_page.dart';
 import '../Screens/landing_page.dart';
