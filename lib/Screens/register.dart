@@ -1,22 +1,21 @@
+import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 
-class Auth {
+class Register extends StatefulWidget {
+  const Register({super.key});
+
+  @override
+  State<Register> createState() => _Register();
+}
+
+class _Register extends State<Register> {
+
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-  User? get currentUser => _firebaseAuth.currentUser;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
-  Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
-
-  Future<void> signInWithEmailAndPassword({
-    required String email,
-    required String password,
-  }) async {
-    await _firebaseAuth.signInWithEmailAndPassword(
-      email: email, 
-      password: password);
-  }
 
   Future<void> createUserWithEmailAndPassword({
     required String email,
@@ -38,50 +37,18 @@ class Auth {
     await docUser.set(json);
   }
 
-  Future<void> signOut() async {
-    await _firebaseAuth.signOut();
-  }
-}
-
-class AuthScreen extends StatefulWidget {
-  const AuthScreen({super.key});
-
-  @override
-  State<AuthScreen> createState() => _AuthScreesnState();
-}
-
-class _AuthScreesnState extends State<AuthScreen> {
-  final bool _isLogin = false;
-  bool _loading = false;
-  final _formKey = GlobalKey<FormState>();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
-  handleSubmit() async {
-    if (!_formKey.currentState!.validate()) return;
-    final email = _emailController.value.text;
-    final password = _passwordController.value.text;
-
-    setState(() => _loading = true);
-
-    if (_isLogin) {
-      await Auth().signInWithEmailAndPassword(email: email, password: password,);
-    } else {
-      await Auth().createUserWithEmailAndPassword(email: email, password: password,);
-    }
-
-    setState(() => _loading = false);
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(4.5),
-          child: Form(
-            key: _formKey,
-            child: Column(
+      return Scaffold(
+        body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/Landing page.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -135,23 +102,18 @@ class _AuthScreesnState extends State<AuthScreen> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
                   ),
-                  onPressed: () => handleSubmit(),
-                  child: _loading
-                      ? const SizedBox(
-                        width: 20,
-                        height: 20,
-                        child: CircularProgressIndicator(
-                          color: Colors.white,
-                          strokeWidth: 2,
-                        ),
-                      )
-                      : Text(_isLogin ? 'Login' : 'Cadastro'),
+                  onPressed: () {
+                        final email = _emailController.text;
+                        final password = _passwordController.text;
+
+                        createUserWithEmailAndPassword(email: email, password: password,);
+                  },
+                  child: const Text('Cadastro'),
                 ),
               ],
             ),
-          ),
         ),
-      )
+      ),
     );
   }
 }
