@@ -1,71 +1,68 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
+class Endereco {
+  final String cep;
+  final String rua;
+  final String bairro;
+  final String cidade;
+  final String numero;
+  final String compl;
 
-class Userx {
-  String id;
-  final String email;
-  final String password;
-  final String nome;
-  final String cpf;
-  final String telefone;
-
-  Userx({
-    this.id = '',
-    required this.nome,
-    required this.cpf,
-    required this.telefone,
-    required this.email,
-    required this.password,
+  Endereco({
+    required this.cep,
+    required this.rua,
+    required this.bairro,
+    required this.cidade,
+    required this.numero,
+    required this.compl,
   });
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'nome': nome,
-        'cpf': cpf,
-        'telefone': telefone,
-        'email': email,
-        'password': password,
+        'cep': cep,
+        'rua': rua,
+        'bairro': bairro,
+        'cidade': cidade,
+        'número': numero,
+        'complemento': compl,
       };
 }
 
-class Register extends StatefulWidget {
-  const Register({super.key});
+class Register2 extends StatefulWidget {
+  const Register2({super.key});
 
   @override
-  State<Register> createState() => _Register();
+  State<Register2> createState() => _Register2();
 }
 
-class _Register extends State<Register> {
-  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+class _Register2 extends State<Register2> {
+  final TextEditingController _cepController = TextEditingController();
+  final TextEditingController _ruaController = TextEditingController();
+  final TextEditingController _bairroController = TextEditingController();
+  final TextEditingController _cidadeController = TextEditingController();
+  final TextEditingController _numeroController = TextEditingController();
+  final TextEditingController _complController = TextEditingController();
 
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _nomeController = TextEditingController();
-  final TextEditingController _cpfController = TextEditingController();
-  final TextEditingController _telefoneController = TextEditingController();
-
-  Future<void> createUserWithEmailAndPassword({
-    required String email,
-    required String password,
-    required String nome,
-    required String cpf,
-    required String telefone,
+  Future<void> createEndereco({
+    required String cep,
+    required String rua,
+    required String bairro,
+    required String cidade,
+    required String numero,
+    required String compl,
   }) async {
-    await _firebaseAuth.createUserWithEmailAndPassword(
-        email: email, password: password);
-
     final docUser = FirebaseFirestore.instance.collection('users').doc();
-    final user = Userx(
-            id: docUser.id,
-            nome: nome,
-            cpf: cpf,
-            telefone: telefone,
-            email: email,
-            password: password)
-        .toJson();
-    final json = user;
+
+    final endereco = Endereco(
+          cep: cep, 
+          rua: rua, 
+          bairro: bairro, 
+          cidade: cidade, 
+          numero: numero, 
+          compl: compl,
+      ).toJson();
+
+    final json = endereco;
 
     await docUser.set(json);
   }
@@ -114,7 +111,7 @@ class _Register extends State<Register> {
                         shrinkWrap: true,
                         children: [
                           const Text(
-                            "Login",
+                            "Endereço: ",
                             style: TextStyle(
                                 fontSize: 24, fontWeight: FontWeight.w800),
                           ),
@@ -122,15 +119,15 @@ class _Register extends State<Register> {
                             height: 20,
                           ),
                           TextFormField(
-                            controller: _emailController,
+                            controller: _cepController,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Insira seu email';
+                                return 'Insira seu cep';
                               }
                               return null;
                             },
                             decoration: const InputDecoration(
-                              hintText: 'Email',
+                              hintText: 'CEP',
                               focusColor: Colors.black,
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
@@ -144,15 +141,15 @@ class _Register extends State<Register> {
                             height: 20,
                           ),
                           TextFormField(
-                            controller: _nomeController,
+                            controller: _ruaController,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Insira seu nome';
+                                return 'Insira sua rua';
                               }
                               return null;
                             },
                             decoration: const InputDecoration(
-                              hintText: 'Nome',
+                              hintText: 'Rua',
                               focusColor: Colors.black,
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
@@ -166,15 +163,15 @@ class _Register extends State<Register> {
                             height: 20,
                           ),
                           TextFormField(
-                            controller: _cpfController,
+                            controller: _bairroController,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Insira seu cpf';
+                                return 'Insira seu bairro';
                               }
                               return null;
                             },
                             decoration: const InputDecoration(
-                              hintText: 'CPF',
+                              hintText: 'bairro',
                               focusColor: Colors.black,
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
@@ -188,15 +185,15 @@ class _Register extends State<Register> {
                             height: 20,
                           ),
                           TextFormField(
-                            controller: _telefoneController,
+                            controller: _cidadeController,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Insira seu telefone';
+                                return 'Insira sua cidade';
                               }
                               return null;
                             },
                             decoration: const InputDecoration(
-                              hintText: 'Telefone',
+                              hintText: 'cidade',
                               focusColor: Colors.black,
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
@@ -210,16 +207,36 @@ class _Register extends State<Register> {
                             height: 20,
                           ),
                           TextFormField(
-                            controller: _passwordController,
-                            obscureText: true,
+                            controller: _numeroController,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Insira sua senha';
+                                return 'Insira o numero de sua casa';
                               }
                               return null;
                             },
                             decoration: const InputDecoration(
-                              hintText: 'Senha',
+                              hintText: 'numero',
+                              focusColor: Colors.black,
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.black,
+                                  width: 2,
+                                ),
+                              ),
+                            ),
+                          ),const SizedBox(
+                            height: 20,
+                          ),
+                          TextFormField(
+                            controller: _complController,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Insira seu complemento';
+                              }
+                              return null;
+                            },
+                            decoration: const InputDecoration(
+                              hintText: 'Complemento',
                               focusColor: Colors.black,
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
@@ -237,22 +254,22 @@ class _Register extends State<Register> {
                               backgroundColor: Colors.black,
                             ),
                             onPressed: () {
-                              final email = _emailController.text;
-                              final password = _passwordController.text;
-                              final nome = _nomeController.text;
-                              final cpf = _cpfController.text;
-                              final telefone = _telefoneController.text;
-
-                              createUserWithEmailAndPassword(
-                                email: email,
-                                password: password,
-                                nome: nome,
-                                cpf: cpf,
-                                telefone: telefone,
+                              final cep = _cepController.text;
+                              final rua = _ruaController.text;
+                              final bairro = _bairroController.text;
+                              final cidade = _cidadeController.text;
+                              final numero = _numeroController.text;
+                              final compl = _complController.text;
+                              createEndereco(
+                                cep: cep,
+                                rua: rua,
+                                bairro: bairro,
+                                cidade: cidade,
+                                numero: numero,
+                                compl: compl,
                               );
-
                               Navigator.of(context).pushNamed(
-                                '/reg2',
+                                '/reg3',
                               );
                             },
                             child: const Text('Continuar'),
