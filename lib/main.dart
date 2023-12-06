@@ -12,10 +12,11 @@ import '../Screens/auth.dart';
 import '../Screens/home_page.dart';
 import '../Screens/landing_page.dart';
 import '../Screens/news.dart';
-import 'Screens/register_1.dart';
+import '../Screens/register_1.dart';
+import '../Screens/register_2.dart';
+import '../Screens/register_3.dart';
 import '../Screens/splash_page.dart';
 //import '../Screens/login_page.dart';
-//import '../Screens/register_page.dart';
 import '../Screens/Tutorial/tutorial_1.dart';
 import '../Screens/Tutorial/tutorial_2.dart';
 import '../Screens/Tutorial/tutorial_3.dart';
@@ -59,7 +60,9 @@ class MyApp extends StatelessWidget {
         '/home': (context) => Home(),
         '/map': (context) => const MapSample(),
         '/new': (context) => NewsPage(),
-        '/reg': (context) => Register(),
+        '/reg': (context) => const Register(),
+        '/reg2': (context) => const Register2(),
+        '/reg3': (context) => const Register3(),
         '/auth': (context) => StreamBuilder<User?>(
               stream: FirebaseAuth.instance.authStateChanges(),
               builder: (context, snapshot) {
