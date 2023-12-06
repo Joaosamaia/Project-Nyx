@@ -12,6 +12,7 @@ import '../Screens/auth.dart';
 import '../Screens/home_page.dart';
 import '../Screens/landing_page.dart';
 import '../Screens/news.dart';
+import 'Screens/register_1.dart';
 import '../Screens/splash_page.dart';
 //import '../Screens/login_page.dart';
 //import '../Screens/register_page.dart';
@@ -19,11 +20,11 @@ import '../Screens/Tutorial/tutorial_1.dart';
 import '../Screens/Tutorial/tutorial_2.dart';
 import '../Screens/Tutorial/tutorial_3.dart';
 
-Future<void> main() async{
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.currentPlatform,
   );
 
   runApp(const MyApp());
@@ -58,17 +59,17 @@ class MyApp extends StatelessWidget {
         '/home': (context) => Home(),
         '/map': (context) => const MapSample(),
         '/new': (context) => NewsPage(),
+        '/reg': (context) => Register(),
         '/auth': (context) => StreamBuilder<User?>(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (context, snapshot){
-            if(snapshot.hasData) {
-              return Home();
-            } else {
-              return const AuthScreen();
-            }
-          },
-
-        ),
+              stream: FirebaseAuth.instance.authStateChanges(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Home();
+                } else {
+                  return const AuthScreen();
+                }
+              },
+            ),
       },
     );
   }

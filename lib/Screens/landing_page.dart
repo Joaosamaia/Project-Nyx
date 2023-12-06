@@ -27,30 +27,28 @@ class _MainPage extends State<MainPage> {
             const Text(
               "Nyx Delivery",
               style: TextStyle(
-                fontSize: 50.0,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Caladea',
-                fontStyle: FontStyle.italic
-                
-              ),
+                  fontSize: 50.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Caladea',
+                  fontStyle: FontStyle.italic),
             ),
             const SizedBox(height: 450.0),
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(
-        '/auth',
-      );
+                  '/auth',
+                );
               },
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all<Color>(const Color(0xFFF08D30)),
-                minimumSize: MaterialStateProperty.all<Size>(const Size(300.0, 62.0)),
+                minimumSize:
+                    MaterialStateProperty.all<Size>(const Size(300.0, 62.0)),
                 shape: MaterialStateProperty.all<OutlinedBorder>(
                   RoundedRectangleBorder(
                     side: const BorderSide(color: Colors.black, width: 2.0),
-                    borderRadius: BorderRadius.circular(
-                        20.0), // 
+                    borderRadius: BorderRadius.circular(20.0), //
                   ),
                 ),
               ),
@@ -70,7 +68,8 @@ class _MainPage extends State<MainPage> {
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all<Color>(const Color(0xFFF08D30)),
-                minimumSize: MaterialStateProperty.all<Size>(const Size(300.0, 60.0)),
+                minimumSize:
+                    MaterialStateProperty.all<Size>(const Size(300.0, 60.0)),
                 shape: MaterialStateProperty.all<OutlinedBorder>(
                   RoundedRectangleBorder(
                     side: const BorderSide(color: Colors.black, width: 2.0),
@@ -81,7 +80,10 @@ class _MainPage extends State<MainPage> {
               ),
               child: const Text('Primeiro acesso',
                   style: TextStyle(fontSize: 18.0, color: Colors.white)),
-            )
+            ),
+            const SizedBox(
+              height: 20,
+            ),
           ]),
         ),
       ),

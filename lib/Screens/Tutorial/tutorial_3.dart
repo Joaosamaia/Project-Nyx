@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../Constants/Colors.dart';
+//import '../../Constants/Colors.dart';
 
 class Tutorial3 extends StatefulWidget {
   const Tutorial3({super.key});
@@ -12,7 +12,7 @@ class _Tutorial3 extends State<Tutorial3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: MainColor.primaryColor,
+        backgroundColor: Colors.white,
         body: Padding(
           padding: const EdgeInsets.all(4.5),
           child: Center(
@@ -73,7 +73,7 @@ class _Tutorial3 extends State<Tutorial3> {
                       icon: const Icon(Icons.arrow_forward_rounded),
                       onPressed: () {
                         Navigator.of(context).pushNamed(
-                          '/auth',
+                          '/reg',
                         );
                       }),
                 ),
