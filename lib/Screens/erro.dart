@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../Models/button.dart';
 
 class Erro extends StatelessWidget {
   const Erro({Key? key}) : super(key: key);
@@ -6,35 +7,35 @@ class Erro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 200, 202, 203),
+      backgroundColor: Color.fromARGB(255, 200, 202, 203),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
+            Icon(
               Icons.error,
               color: Colors.red,
               size: 50,
             ),
-            const SizedBox(height: 20),
-            const Text(
+            SizedBox(height: 20),
+            Text(
               "Ops! Algo deu errado.",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
-            const Text(
+            SizedBox(height: 10),
+            Text(
               "Desculpe, encontramos um erro inesperado.",
               style: TextStyle(fontSize: 16),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {},
-              child: const Text("Voltar"),
+              child: Text("Voltar"),
             ),
           ],
         ),
       ),
-      extendBody: true,
+      extendBodyBehindAppBar: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: GestureDetector(
         onDoubleTap: () {
