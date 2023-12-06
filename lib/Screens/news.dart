@@ -65,9 +65,15 @@ class NewsPage extends StatelessWidget {
       ),
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: ClipOval(
+      floatingActionButton: GestureDetector(
+        onDoubleTap: () {
+          Navigator.pushNamed(context, '/new');
+        },
+        onLongPress: () {
+          sendWhatsapp();
+        },
+        child: FloatingActionButton(
+          onPressed: () {},
           child: Image.asset(
             "assets/images/logoR.png",
             width: 1500.0,
@@ -88,11 +94,9 @@ class NewsPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                icon: const Icon(Icons.home, color: Colors.grey),
+                icon: const Icon(Icons.home, color: Colors.white),
                 iconSize: 30.0,
-                onPressed: () { Navigator.of(context).pushNamed(
-                    '/home1',
-                  );},
+                onPressed: () {},
               ),
               IconButton(
                 icon: const Icon(
@@ -108,10 +112,12 @@ class NewsPage extends StatelessWidget {
               IconButton(
                 icon: const Icon(
                   Icons.library_books,
-                  color: Colors.white,
+                  color: Colors.grey,
                 ),
                 iconSize: 30.0,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/new');
+                },
               ),
               IconButton(
                 icon: const Icon(
