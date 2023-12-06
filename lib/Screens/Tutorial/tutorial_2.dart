@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../Constants/Colors.dart';
+//import '../../Constants/Colors.dart';
 
 class Tutorial2 extends StatefulWidget {
   const Tutorial2({super.key});
@@ -12,7 +12,7 @@ class _Tutorial2 extends State<Tutorial2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: MainColor.primaryColor,
+        backgroundColor: Colors.white,
         body: Padding(
           padding: const EdgeInsets.all(4.5),
           child: Center(
