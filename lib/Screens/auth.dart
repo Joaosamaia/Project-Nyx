@@ -75,7 +75,7 @@ class _AuthScreesnState extends State<AuthScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text(
-                  "LogIn",
+                  "Login",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800),
                 ),
                 const SizedBox(height: 20,),

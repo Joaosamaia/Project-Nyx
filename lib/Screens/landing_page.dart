@@ -38,10 +38,9 @@ class _MainPage extends State<MainPage> {
             const SizedBox(height: 450.0),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) =>  Home()),
-                );
+                Navigator.of(context).pushNamed(
+        '/auth',
+      );
               },
               style: ButtonStyle(
                 backgroundColor:
