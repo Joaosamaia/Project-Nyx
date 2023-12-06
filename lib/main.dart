@@ -5,16 +5,16 @@ import '../Screens/locator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'Screens/Authentication/login.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../Screens/auth.dart';
 
 import '../Screens/home_page.dart';
 import '../Screens/landing_page.dart';
 import '../Screens/news.dart';
-import '../Screens/register_1.dart';
-import '../Screens/register_2.dart';
-import '../Screens/register_3.dart';
+import '../Screens/Authentication/register_1.dart';
+import '../Screens/Authentication/register_2.dart';
+import '../Screens/Authentication/register_3.dart';
 import '../Screens/splash_page.dart';
 //import '../Screens/login_page.dart';
 import '../Screens/Tutorial/tutorial_1.dart';
@@ -51,8 +51,6 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashPage(),
-        // '/login': (context) => const LoginPage(),
-        // '/register': (context) => const RegisterPage(),
         '/main': (context) => const MainPage(),
         '/tutorial1': (context) => const Tutorial1(),
         '/tutorial2': (context) => const Tutorial2(),
@@ -63,16 +61,8 @@ class MyApp extends StatelessWidget {
         '/reg': (context) => const Register(),
         '/reg2': (context) => const Register2(),
         '/reg3': (context) => const Register3(),
-        '/auth': (context) => StreamBuilder<User?>(
-              stream: FirebaseAuth.instance.authStateChanges(),
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  return Home();
-                } else {
-                  return const AuthScreen();
-                }
-              },
-            ),
+        '/login': (context) => const Login(),
+        
       },
     );
   }

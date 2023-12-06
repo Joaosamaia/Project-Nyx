@@ -37,7 +37,7 @@ class _MainPage extends State<MainPage> {
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(
-                  '/auth',
+                  '/login',
                 );
               },
               style: ButtonStyle(
