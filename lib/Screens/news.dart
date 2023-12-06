@@ -134,3 +134,19 @@ class NewsPage extends StatelessWidget {
     );
   }
 }
+
+void _abrirLinkNoticia(BuildContext context, String link) async {
+    String encodedLink = Uri.encodeFull(link);
+
+    try {
+      await launch(encodedLink);
+    } catch (e) {
+      print("Erro ao abrir o link: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Não foi possível abrir o link da notícia.'),
+        ),
+      );
+    }
+  }
+}
