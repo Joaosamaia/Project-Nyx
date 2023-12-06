@@ -31,13 +31,11 @@ class _Register3 extends State<Register3> {
     required String nome,
     required String numero,
   }) async {
-    final docUser = FirebaseFirestore.instance.collection('users').doc();
-
+    final docUser = FirebaseFirestore.instance.collection('contatos').doc();
     final contato = Contato(
-          nome: nome,  
-          numero: numero, 
-      ).toJson();
-
+      nome: nome,
+      numero: numero,
+    ).toJson();
     final json = contato;
 
     await docUser.set(json);
@@ -64,99 +62,104 @@ class _Register3 extends State<Register3> {
                   const SizedBox(height: 50),
                   Container(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                     child: Image.asset(
                       'assets/images/logoG - red.png',
                       height: 150,
                       width: 150,
                     ),
                   ),
-                  Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      constraints: const BoxConstraints(
-                        maxWidth: 375,
-                        maxHeight: 650,
-                      ),
-                      child: ListView(
-                        shrinkWrap: true,
-                        children: [
-                          const Text(
-                            "Contato de Emergência: ",
-                            style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.w800),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          TextFormField(
-                            controller: _nomeController,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Insira o nome do seu contato';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                              hintText: 'Nome do contato',
-                              focusColor: Colors.black,
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                  width: 2,
-                                ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    constraints: const BoxConstraints(
+                      maxWidth: 375,
+                      maxHeight: 650,
+                    ),
+                    child: ListView(
+                      shrinkWrap: true,
+                      children: [
+                        const Text(
+                          "Contato de Emergência: ",
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.w800),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextFormField(
+                          controller: _nomeController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Insira o nome do seu contato';
+                            }
+                            return null;
+                          },
+                          decoration: const InputDecoration(
+                            hintText: 'Nome do contato',
+                            focusColor: Colors.black,
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                                width: 2,
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          TextFormField(
-                            controller: _numeroController,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Insira o numero do seu contato';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                              hintText: 'Numero do contato',
-                              focusColor: Colors.black,
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                  width: 2,
-                                ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextFormField(
+                          controller: _numeroController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Insira o numero do seu contato';
+                            }
+                            return null;
+                          },
+                          decoration: const InputDecoration(
+                            hintText: 'Numero do contato',
+                            focusColor: Colors.black,
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                                width: 2,
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
+                        ),
+                        const SizedBox(
+                          height: 46,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xffff9100),
                           ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black,
-                            ),
-                            onPressed: () {
-                              final nome = _nomeController.text;
-                              final numero = _numeroController.text;
-                              createContato(
-                                nome: nome,
-                                numero: numero,
-                              );
-                              Navigator.of(context).pushNamed(
-                                '/auth',
-                              );
-                            },
-                            child: const Text('Finalizar cadastro'),
+                          onPressed: () {
+                            final nome = _nomeController.text;
+                            final numero = _numeroController.text;
+
+                            createContato(
+                              nome: nome,
+                              numero: numero,
+                            );
+                            Navigator.of(context).pushNamed(
+                              '/auth',
+                            );
+                          },
+                          child: const Text(
+                            'Finalizar cadastro',
+                            style: TextStyle(fontSize: 18, color: Colors.white),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ]
