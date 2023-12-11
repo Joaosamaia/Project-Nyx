@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_nyx/Models/button.dart';
 import '../Models/food.dart';
 import '../components/food_tile.dart';
+import '../Models/button.dart';
 
 class Home extends StatelessWidget {
   final List<Food> foodMenu = [
@@ -60,7 +62,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               child: const Text(
-                'Olá, Usuário',
+                'Olá!',
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
@@ -68,8 +70,6 @@ class Home extends StatelessWidget {
                 textAlign: TextAlign.right,
               ),
             ),
-
-//Ligar essa saudação ao fire base para apresentar o nome da usuaria e sua localização se der tempo, se não alterar para outra forma de saudação
 
             const SizedBox(height: 5),
 
@@ -97,9 +97,15 @@ class Home extends StatelessWidget {
       ),
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: ClipOval(
+      floatingActionButton: GestureDetector(
+        onDoubleTap: () {
+          Navigator.pushNamed(context, '/new');
+        },
+        onLongPress: () {
+          sendWhatsapp();
+        },
+        child: FloatingActionButton(
+          onPressed: () {},
           child: Image.asset(
             "assets/images/logoR.png",
             width: 1500.0,
