@@ -1,12 +1,15 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.map">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.NyxDelivery">
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.SEND_SMS"/>
+
+
 
   <application android:label="Nyx Delivery" android:name="${applicationName}" android:icon="@mipmap/ic_launcher">
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD5B0NU9ANx7Gmm6T7SSQJAHgAQOkVqZa0" />
     
     <activity
-      android:name=".MainActivity"
+      android:name="com.example.NyxDelivery.MainActivity"
       android:exported="true"
       android:launchMode="singleTop"
       android:theme="@style/LaunchTheme"
