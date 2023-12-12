@@ -4,5 +4,6 @@ O Nyx é um aplicativo projetado para fornecer recursos práticos para mulheres 
 
 ## Docs úteis ao projeto:
 
-- <a href="https://docs.google.com/document/d/1Ji0rHpo6TrOQi9VUJ-s0mQP_nCWUb4gB9OxtAcc2HXI/edit#heading=h.2ea87tx589y4">Documento de Levantamento de Requisitos</a>
+- <a href="https://docs.google.com/document/d/1Ji0rHpo6TrOQi9VUJ-s0mQP_nCWUb4gB9OxtAcc2HXI/edit#heading=h.2ea87tx589y4">Levantamento de Requisitos</a>
 - <a href="https://www.figma.com/file/HpFzkWQf5vfNp6Lr6c9A31/App---bot%C3%A3o-de-emerg%C3%AAncia?type=design&node-id=95-10&mode=design&t=aXH4iV3Mbut2ARLe-0">Prototipação no Figma</a>
+- <a href="https://docs.google.com/document/d/1t96_3BCrD7cRMJYsNcjq7eo4mpINpd7WwhXfMQYndGs/edit#heading=h.s4k1pwb67xfj">Documentação Nyx</a>
