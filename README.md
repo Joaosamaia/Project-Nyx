@@ -1,5 +1,8 @@
 # Projeto_nyx
 
+>Status: Em Desenvolvimento
+
+
 O Nyx é um aplicativo projetado para fornecer recursos práticos para mulheres que enfrentam situações de violência doméstica. Este aplicativo visa oferecer uma opção segura para que mulheres em situação de abuso doméstico ou similar possam, de maneira rápida e com pouca interação, contactar as autoridades responsáveis e obter ajuda e/ou socorro a depender do caso. Assim visando evitar desastres e aumentar o acesso à ajuda dessas mulheres.
 
 ## Docs do projeto:
