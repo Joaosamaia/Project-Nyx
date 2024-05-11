@@ -1,22 +1,21 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+import 'firebase_options.dart';
 
 import '../Screens/locator.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-
-import 'package:firebase_core/firebase_core.dart';
-import 'Screens/Authentication/login.dart';
-import 'firebase_options.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import '../Screens/Authentication/register_1.dart';
+import '../Screens/Authentication/register_2.dart';
+import '../Screens/Authentication/register_3.dart';
+import '../Screens/Authentication/login.dart';
 
 import '../Screens/home_page.dart';
 import '../Screens/landing_page.dart';
 import '../Screens/news.dart';
-import '../Screens/Authentication/register_1.dart';
-import '../Screens/Authentication/register_2.dart';
-import '../Screens/Authentication/register_3.dart';
 import '../Screens/splash_page.dart';
-//import '../Screens/login_page.dart';
+
 import '../Screens/Tutorial/tutorial_1.dart';
 import '../Screens/Tutorial/tutorial_2.dart';
 import '../Screens/Tutorial/tutorial_3.dart';
